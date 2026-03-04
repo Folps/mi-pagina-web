@@ -1,0 +1,438 @@
+    :root {
+        --ink: #1a1208;
+        --paper: #f5f0e8;
+        --aged: #e8dfc8;
+        --faded: #c9bfa8;
+        --red: #8b1a1a;
+        --accent: #4a3728;
+        --shadow: rgba(26, 18, 8, 0.15);
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: #d4c9b0;
+        background-image:
+            repeating-linear-gradient(0deg, transparent, transparent 27px, rgba(26, 18, 8, 0.06) 27px, rgba(26, 18, 8, 0.06) 28px),
+            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23noise)' opacity='0.08'/%3E%3C/svg%3E");
+        font-family: 'Courier Prime', monospace;
+        color: var(--ink);
+        min-height: 100vh;
+        padding: 40px 20px 80px;
+    }
+
+    /* Paper sheet */
+    .page {
+        max-width: 860px;
+        margin: 0 auto;
+        background: var(--paper);
+        box-shadow:
+            0 2px 6px var(--shadow),
+            0 8px 30px rgba(26, 18, 8, 0.2),
+            inset 0 0 80px rgba(26, 18, 8, 0.03);
+        border-radius: 1px;
+        padding: 70px 80px 80px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* Paper texture + edge stain */
+    .page::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background:
+            radial-gradient(ellipse at 5% 0%, rgba(180, 140, 80, 0.15) 0%, transparent 50%),
+            radial-gradient(ellipse at 95% 100%, rgba(160, 120, 60, 0.12) 0%, transparent 50%);
+        pointer-events: none;
+    }
+
+    /* Left margin line */
+    .page::after {
+        content: '';
+        position: absolute;
+        left: 68px;
+        top: 0;
+        bottom: 0;
+        width: 1px;
+        background: rgba(139, 26, 26, 0.25);
+    }
+
+    /* Header */
+    header {
+        text-align: center;
+        margin-bottom: 50px;
+        padding-bottom: 30px;
+        border-bottom: 2px solid var(--ink);
+        position: relative;
+    }
+
+    .stamp-container {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 18px;
+    }
+
+    .stamp {
+        border: 3px solid var(--red);
+        color: var(--red);
+        font-family: 'Special Elite', cursive;
+        font-size: 10px;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        padding: 5px 16px;
+        transform: rotate(-2deg);
+        opacity: 0.85;
+        box-shadow: inset 0 0 0 1px var(--red);
+    }
+
+    h1 {
+        font-family: 'Special Elite', cursive;
+        font-size: 3.2rem;
+        letter-spacing: 6px;
+        text-transform: uppercase;
+        line-height: 1;
+        margin-bottom: 12px;
+        color: var(--ink);
+    }
+
+    .tagline {
+        font-family: 'IM Fell English', serif;
+        font-style: italic;
+        font-size: 1.1rem;
+        color: var(--accent);
+        letter-spacing: 1px;
+        margin-bottom: 8px;
+    }
+
+    .underline-deco {
+        width: 120px;
+        height: 2px;
+        background: var(--ink);
+        margin: 16px auto 0;
+    }
+
+    /* Nav / quick links */
+    nav {
+        display: flex;
+        justify-content: center;
+        gap: 32px;
+        margin-bottom: 50px;
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        font-family: 'Special Elite', cursive;
+        font-size: 0.82rem;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--ink);
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+        transition: border-color 0.2s, color 0.2s;
+        padding-bottom: 2px;
+    }
+
+    nav a:hover {
+        color: var(--red);
+        border-color: var(--red);
+    }
+
+    /* Sections */
+    section {
+        margin-bottom: 52px;
+    }
+
+    .section-label {
+        font-family: 'Special Elite', cursive;
+        font-size: 0.72rem;
+        letter-spacing: 5px;
+        text-transform: uppercase;
+        color: var(--faded);
+        margin-bottom: 8px;
+    }
+
+    h2 {
+        font-family: 'Special Elite', cursive;
+        font-size: 1.55rem;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--ink);
+        border-bottom: 1px solid var(--faded);
+        padding-bottom: 8px;
+        margin-bottom: 24px;
+    }
+
+    /* About */
+    .about-text {
+        font-family: 'Courier Prime', monospace;
+        font-size: 1rem;
+        line-height: 1.85;
+        max-width: 640px;
+        color: var(--ink);
+    }
+
+    .about-text strong {
+        font-weight: 700;
+    }
+
+    /* Skills chips */
+    .skills-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    .skill-chip {
+        font-family: 'Courier Prime', monospace;
+        font-size: 0.82rem;
+        border: 1px solid var(--accent);
+        padding: 4px 12px;
+        letter-spacing: 1px;
+        color: var(--accent);
+        background: transparent;
+        position: relative;
+    }
+
+    /* Projects */
+    .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 20px;
+    }
+
+    .project-card {
+        border: 1px solid var(--faded);
+        padding: 22px 22px 18px;
+        background: var(--aged);
+        position: relative;
+        transition: transform 0.15s, box-shadow 0.15s;
+        cursor: default;
+    }
+
+    .project-card:hover {
+        transform: translateY(-3px) rotate(0.3deg);
+        box-shadow: 3px 6px 18px var(--shadow);
+    }
+
+    .project-card::before {
+        content: attr(data-num);
+        position: absolute;
+        top: -12px;
+        left: 18px;
+        background: var(--ink);
+        color: var(--paper);
+        font-family: 'Special Elite', cursive;
+        font-size: 0.72rem;
+        padding: 2px 8px;
+        letter-spacing: 2px;
+    }
+
+    .project-card h3 {
+        font-family: 'Special Elite', cursive;
+        font-size: 1rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        color: var(--ink);
+    }
+
+    .project-card p {
+        font-size: 0.88rem;
+        line-height: 1.6;
+        color: var(--accent);
+        margin-bottom: 14px;
+    }
+
+    .project-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+
+    .project-tag {
+        font-size: 0.72rem;
+        font-family: 'Courier Prime', monospace;
+        letter-spacing: 1px;
+        color: var(--faded);
+        border-bottom: 1px dotted var(--faded);
+    }
+
+    .project-link {
+        display: inline-block;
+        margin-top: 14px;
+        font-size: 0.78rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        font-family: 'Special Elite', cursive;
+        color: var(--red);
+        text-decoration: none;
+    }
+
+    .project-link:hover {
+        text-decoration: underline;
+    }
+
+    /* CTA buttons */
+    .cta-row {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        align-items: center;
+        margin-top: 8px;
+    }
+
+    .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-family: 'Special Elite', cursive;
+        font-size: 0.82rem;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 12px 26px;
+        border: 2px solid var(--ink);
+        color: var(--ink);
+        background: transparent;
+        transition: background 0.2s, color 0.2s;
+        cursor: pointer;
+    }
+
+    .btn:hover {
+        background: var(--ink);
+        color: var(--paper);
+    }
+
+    .btn-primary {
+        background: var(--ink);
+        color: var(--paper);
+    }
+
+    .btn-primary:hover {
+        background: var(--accent);
+        border-color: var(--accent);
+    }
+
+    .btn svg {
+        width: 16px;
+        height: 16px;
+        flex-shrink: 0;
+    }
+
+    /* Contact */
+    .contact-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 14px;
+    }
+
+    .contact-item {
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+    }
+
+    .contact-label {
+        font-family: 'Special Elite', cursive;
+        font-size: 0.68rem;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--faded);
+    }
+
+    .contact-val {
+        font-size: 0.92rem;
+        color: var(--ink);
+    }
+
+    .contact-val a {
+        color: var(--ink);
+        text-decoration: none;
+        border-bottom: 1px dotted var(--accent);
+    }
+
+    .contact-val a:hover {
+        color: var(--red);
+        border-color: var(--red);
+    }
+
+    /* Footer */
+    footer {
+        text-align: center;
+        border-top: 1px solid var(--faded);
+        padding-top: 28px;
+        margin-top: 10px;
+    }
+
+    footer p {
+        font-size: 0.76rem;
+        letter-spacing: 2px;
+        color: var(--faded);
+        font-family: 'Special Elite', cursive;
+        text-transform: uppercase;
+    }
+
+    /* Typewriter cursor blink */
+    .cursor {
+        display: inline-block;
+        width: 10px;
+        height: 1.1em;
+        background: var(--ink);
+        vertical-align: text-bottom;
+        animation: blink 1s step-end infinite;
+    }
+
+    @keyframes blink {
+
+        0%,
+        100% {
+            opacity: 1;
+        }
+
+        50% {
+            opacity: 0;
+        }
+    }
+
+    /* Fade-in on load */
+    .page {
+        animation: fadeIn 0.6s ease both;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(12px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+        .page {
+            padding: 40px 28px 50px;
+        }
+
+        .page::after {
+            display: none;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            letter-spacing: 4px;
+        }
+
+        nav {
+            gap: 18px;
+        }
+    }

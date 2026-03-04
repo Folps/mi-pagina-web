@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Felipe Iraola — Estadística</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=IM+Fell+English:ital@0;1&display=swap"
+    rel="stylesheet" />
+  <link src="scripts/style.css">
+  <link rel="stylesheet" href="scripts/style.css">
+
+  <script src="scripts/codigo.js" defer></script>
+
+
+
+</head>
+
+<body>
+  <div class="page">
+
+    <!-- HEADER -->
+    <header>
+      <div class="stamp-container">
+        <div class="stamp">Lic. en Estadística — En curso</div>
+      </div>
+      <h1>Felipe Iraola<span class="cursor"></span></h1>
+      <p class="tagline">Estudiante de Estadística &middot; Data & Análisis Cuantitativo</p>
+      <div class="underline-deco"></div>
+    </header>
+
+    <!-- NAV -->
+    <nav>
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#cv">Currículum</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+
+    <!-- SOBRE MÍ -->
+    <section id="sobre-mi">
+      <p class="section-label">§ 01</p>
+      <h2>Sobre mí</h2>
+      <p class="about-text">
+        Estudiante de la <strong>Licenciatura en Estadística</strong>, con foco en
+        análisis de datos, modelado estadístico y visualización. Me interesa convertir
+        números en decisiones concretas — sin vueltas y sin magia negra.
+        <br /><br />
+        Me encuentro especializandome en <strong>R, Python y SQL</strong>. Me gustan los problemas reales:
+        datos desordenados, preguntas sin respuesta obvia, y la satisfacción de encontrar
+        el patrón que nadie había visto.
+      </p>
+      <div class="skills-grid">
+        <span class="skill-chip">R / tidyverse</span>
+        <span class="skill-chip">Python / pandas</span>
+        <span class="skill-chip">SQL</span>
+        <span class="skill-chip">Regresión</span>
+        <span class="skill-chip">Series de tiempo</span>
+        <span class="skill-chip">Machine Learning</span>
+        <span class="skill-chip">ggplot2</span>
+        <span class="skill-chip">Probabilidad</span>
+        <span class="skill-chip">Git</span>
+      </div>
+    </section>
+
+    <!-- PROYECTOS -->
+    <section id="proyectos">
+      <p class="section-label">§ 02</p>
+      <h2>Proyectos</h2>
+      <div class="projects-grid">
+
+        <div class="project-card" data-num="PROY. I">
+          <h3>Análisis Electoral</h3>
+          <p>Modelado de resultados electorales con regresión logística y visualizaciones geoespaciales a nivel
+            departamental.</p>
+          <div class="project-tags">
+            <span class="project-tag">R</span>
+            <span class="project-tag">sf</span>
+            <span class="project-tag">ggplot2</span>
+          </div>
+          <a href="https://github.com/tuusuario" target="_blank" class="project-link">→ Ver código</a>
+        </div>
+
+        <div class="project-card" data-num="PROY. II">
+          <h3>Predicción de Series de Tiempo</h3>
+          <p>Pronóstico de demanda energética usando modelos ARIMA y Prophet, comparando performance con métricas
+            estándar.</p>
+          <div class="project-tags">
+            <span class="project-tag">Python</span>
+            <span class="project-tag">statsmodels</span>
+            <span class="project-tag">Prophet</span>
+          </div>
+          <a href="https://github.com/tuusuario" target="_blank" class="project-link">→ Ver código</a>
+        </div>
+
+        <div class="project-card" data-num="PROY. III">
+          <h3>Dashboard de Indicadores</h3>
+          <p>Panel interactivo con indicadores socioeconómicos nacionales, construido con Shiny y datos abiertos del
+            gobierno.</p>
+          <div class="project-tags">
+            <span class="project-tag">R Shiny</span>
+            <span class="project-tag">dplyr</span>
+            <span class="project-tag">API REST</span>
+          </div>
+          <a href="https://github.com/tuusuario" target="_blank" class="project-link">→ Ver código</a>
+        </div>
+
+        <div class="project-card" data-num="PROY. IV">
+          <h3>Trabajo Final de Grado</h3>
+          <p>
+            <em>En desarrollo.</em> Análisis de [tu tema de tesis] con métodos de [método que usás].
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">En proceso</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CV -->
+    <section id="cv">
+      <p class="section-label">§ 03</p>
+      <h2>Currículum Vitae</h2>
+      <p class="about-text" style="margin-bottom: 24px;">
+        Formación académica en estadística, con experiencia en proyectos de análisis cuantitativo.
+        Descargá el CV completo o visitá mi perfil de GitHub para ver el trabajo en detalle.
+      </p>
+      <div class="cta-row">
+        <a href="scripts/CV - Felipe Iraola 2025 ENG.pdf" download class="btn btn-primary">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+            <polyline points="7 10 12 15 17 10" />
+            <line x1="12" y1="15" x2="12" y2="3" />
+          </svg>
+          Descargar CV
+        </a>
+        <a href="https://github.com/Folps" target="_blank" class="btn">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+          </svg>
+          GitHub
+        </a>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto">
+      <p class="section-label">§ 04</p>
+      <h2>Contacto</h2>
+      <div class="contact-grid">
+        <div class="contact-item">
+          <span class="contact-label">Email</span>
+          <span class="contact-val">
+            <a href="felipe.iraola@gmail.com">felipe.iraola@gmail.com</a>
+          </span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-label">LinkedIn</span>
+          <span class="contact-val">
+            <a href="https://www.linkedin.com/in/iraolaf" target="_blank">Felipe Iraola</a>
+          </span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-label">GitHub</span>
+          <span class="contact-val">
+            <a href="https://github.com/Folps" target="_blank">Folps</a>
+          </span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-label">Ubicación</span>
+          <span class="contact-val">Uruguay</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <p>Escrito a máquina &mdash; <span id="year"></span> &mdash; Sin JavaScript frameworks</p>
+    </footer>
+
+  </div>
+
+
+</body>
+
+</html>
